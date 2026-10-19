@@ -8,19 +8,28 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Cormorant Garamond is a stand-in for PP Editorial New until the licensed web font files are added. -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0b0b0b;--paper:#f6f4ef;--line:rgba(11,11,11,.14);--accent:#e16000;--display:"PP Editorial New","Cormorant Garamond",Georgia,serif;--body:"Epilogue",system-ui,sans-serif}
+:root{
+  --ink:#0b0b0b; --paper:#f6f4ef; --line:rgba(11,11,11,.14);
+  --accent:#e16000; /* brand orange, used only as a small touch */
+  --display:"PP Editorial New","Cormorant Garamond",Georgia,serif;
+  --body:"Epilogue",system-ui,sans-serif;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .display{font-family:var(--display);font-weight:300;letter-spacing:-0.05em;line-height:.95}
 .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+
 header{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:20px 28px;mix-blend-mode:difference;color:#fff}
-.brand{font-family:var(--display);font-size:28px;letter-spacing:-0.05em;font-weight:300}
+.brand{display:block;line-height:0}
+.brand img{height:auto;width:112px;display:block}
 header nav a{margin-left:26px;font-size:14px;letter-spacing:.04em}
 .pill{border:1px solid currentColor;border-radius:99px;padding:8px 18px}
+
 .hero{min-height:100svh;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 56px}
 .hero h1{font-size:clamp(56px,12vw,190px);max-width:11ch}
 .hero h1 em{font-style:italic;color:var(--accent)}
@@ -29,20 +38,24 @@ header nav a{margin-left:26px;font-size:14px;letter-spacing:.04em}
 .cta{display:inline-block;margin-top:34px;background:var(--paper);color:var(--ink);padding:16px 30px;border-radius:99px;font-weight:500;transition:transform .3s,background .3s}
 .cta:hover{transform:translateY(-3px);background:var(--accent);color:#fff}
 .scroll{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+
 .marquee{background:var(--paper);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0}
 .marquee div{display:inline-block;animation:slide 38s linear infinite;font-family:var(--display);font-size:30px;letter-spacing:-0.05em}
 .marquee span{margin:0 26px}
 @keyframes slide{to{transform:translateX(-50%)}}
+
 section{padding:120px 0}
 .label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:28px}
 .statement{font-size:clamp(36px,6vw,84px);max-width:20ch}
+
 .missions{border-top:1px solid var(--line)}
 .mission{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:28px;padding:44px 0;border-bottom:1px solid var(--line);align-items:start;transition:padding .4s}
 .mission:hover{padding-left:16px}
-.mission .n{font-family:var(--display);font-size:28px;color:var(--accent)}
+.mission .n{font-family:var(--display);font-size:28px;letter-spacing:-0.05em;color:var(--accent)}
 .mission h3{font-size:clamp(40px,5vw,72px)}
 .mission p{max-width:46ch}
 .mission small{display:block;margin-top:14px;opacity:.6;font-size:15px}
+
 .proof{background:var(--ink);color:var(--paper)}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:20px}
 .stat b{display:block;font-family:var(--display);font-weight:300;font-size:clamp(64px,9vw,140px);letter-spacing:-0.05em;line-height:1}
@@ -50,27 +63,40 @@ section{padding:120px 0}
 .quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;margin-top:90px;border-top:1px solid rgba(246,244,239,.2);padding-top:50px}
 .quotes blockquote{font-family:var(--display);font-weight:300;font-size:clamp(26px,3vw,38px);letter-spacing:-0.05em;line-height:1.1}
 .quotes cite{display:block;margin-top:16px;font:300 14px var(--body);letter-spacing:.04em;opacity:.6;font-style:normal}
+
 .about .cols{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:20px}
 .about ul{list-style:none}
 .about li{padding:14px 0;border-bottom:1px solid var(--line)}
+
 .news{border-top:1px solid var(--line)}
 .news a{display:flex;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .3s}
 .news a:hover{padding-left:14px}
 .news a span:last-child{opacity:.5}
-.contact{background:var(--accent);color:var(--ink);padding:140px 0}
+
+.contact{background:var(--accent);color:var(--ink);text-align:left;padding:140px 0}
 .contact a.big{display:block;font-family:var(--display);font-weight:300;letter-spacing:-0.05em;font-size:clamp(64px,15vw,240px);line-height:.9;margin-top:12px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .contact a.big:hover{transform:translateX(24px) rotate(-1.5deg)}
 .contact p{max-width:40ch;font-size:20px}
+
 footer{padding:36px 28px;display:flex;justify-content:space-between;font-size:14px;opacity:.7;flex-wrap:wrap;gap:12px}
+
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s}
 .reveal.in{opacity:1;transform:none}
-@media(max-width:820px){body{font-size:17px}header nav a:not(.pill){display:none}.mission{grid-template-columns:1fr;gap:10px}.stats,.quotes,.about .cols{grid-template-columns:1fr}section{padding:80px 0}}
+
+@media(max-width:820px){
+  body{font-size:17px}
+  header nav a:not(.pill){display:none}
+  .mission{grid-template-columns:1fr;gap:10px}
+  .stats,.quotes,.about .cols{grid-template-columns:1fr}
+  section{padding:80px 0}
+}
 @media(prefers-reduced-motion:reduce){.marquee div{animation:none}.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+
 <header>
-  <a class="brand" href="#top">De Vie</a>
+  <a class="brand" href="#top" aria-label="De Vie"><img src="data:image/png;base64,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" width="356" height="100" alt="De Vie"></a>
   <nav>
     <a href="#missions">What we do</a>
     <a href="#proof">Proof</a>
@@ -78,6 +104,7 @@ footer{padding:36px 28px;display:flex;justify-content:space-between;font-size:14
     <a class="pill" href="#contact">Talk to us</a>
   </nav>
 </header>
+
 <main id="top">
 <div class="hero">
   <div class="wrap">
@@ -91,18 +118,21 @@ footer{padding:36px 28px;display:flex;justify-content:space-between;font-size:14
     </div>
   </div>
 </div>
+
 <div class="marquee" aria-hidden="true">
   <div>
     <span>Bar concept</span>·<span>Menu development</span>·<span>Training</span>·<span>Lab implementation</span>·<span>No and low</span>·<span>Sustainability</span>·<span>Pairing</span>·<span>Ranking and certification</span>·<span>Liquid production</span>·
     <span>Bar concept</span>·<span>Menu development</span>·<span>Training</span>·<span>Lab implementation</span>·<span>No and low</span>·<span>Sustainability</span>·<span>Pairing</span>·<span>Ranking and certification</span>·<span>Liquid production</span>·
   </div>
 </div>
+
 <section id="intro">
   <div class="wrap reveal">
     <div class="label">What we do</div>
     <p class="display statement">We turn a bar idea into a place people queue for, and keep it that way.</p>
   </div>
 </section>
+
 <section id="missions" style="padding-top:0">
   <div class="wrap">
     <div class="missions">
@@ -133,6 +163,7 @@ footer{padding:36px 28px;display:flex;justify-content:space-between;font-size:14
     </div>
   </div>
 </section>
+
 <section class="proof" id="proof">
   <div class="wrap">
     <div class="label reveal">Proof</div>
@@ -147,6 +178,7 @@ footer{padding:36px 28px;display:flex;justify-content:space-between;font-size:14
     </div>
   </div>
 </section>
+
 <section class="about" id="about">
   <div class="wrap">
     <div class="label reveal">Who we are</div>
@@ -161,6 +193,7 @@ footer{padding:36px 28px;display:flex;justify-content:space-between;font-size:14
     </div>
   </div>
 </section>
+
 <section class="news" style="padding:80px 0">
   <div class="wrap">
     <div class="label reveal">Selected work and news</div>
@@ -169,6 +202,7 @@ footer{padding:36px 28px;display:flex;justify-content:space-between;font-size:14
     <a href="#" class="reveal"><span>[News item]</span><span>2026</span></a>
   </div>
 </section>
+
 <section class="contact" id="contact">
   <div class="wrap reveal">
     <p>Have a project? Let's have a first call.</p>
@@ -176,11 +210,13 @@ footer{padding:36px 28px;display:flex;justify-content:space-between;font-size:14
   </div>
 </section>
 </main>
+
 <footer>
   <span>De Vie Consultancy · Paris</span>
   <span>22-24 rue Saint-Sauveur, 75002 Paris</span>
   <a href="https://instagram.com/devie.bar">@devie.bar</a>
 </footer>
+
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
