@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De Vie Consultancy</title>
+<meta name="description" content="Bar concepts, menus, training and production for hospitality and brands. By the team behind De Vie and Little Red Door.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b0b0b;--paper:#f6f4ef;--line:rgba(11,11,11,.14);--accent:#e16000;--display:"PP Editorial New","Cormorant Garamond",Georgia,serif;--body:"Epilogue",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.display{font-family:var(--display);font-weight:300;letter-spacing:-0.05em;line-height:.95}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+header{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:20px 28px;mix-blend-mode:difference;color:#fff}
+.brand{font-family:var(--display);font-size:28px;letter-spacing:-0.05em;font-weight:300}
+header nav a{margin-left:26px;font-size:14px;letter-spacing:.04em}
+.pill{border:1px solid currentColor;border-radius:99px;padding:8px 18px}
+.hero{min-height:100svh;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 56px}
+.hero h1{font-size:clamp(56px,12vw,190px);max-width:11ch}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p{margin-top:28px;max-width:44ch;font-size:20px;opacity:.85}
+.hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.cta{display:inline-block;margin-top:34px;background:var(--paper);color:var(--ink);padding:16px 30px;border-radius:99px;font-weight:500;transition:transform .3s,background .3s}
+.cta:hover{transform:translateY(-3px);background:var(--accent);color:#fff}
+.scroll{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.marquee{background:var(--paper);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0}
+.marquee div{display:inline-block;animation:slide 38s linear infinite;font-family:var(--display);font-size:30px;letter-spacing:-0.05em}
+.marquee span{margin:0 26px}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:120px 0}
+.label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:28px}
+.statement{font-size:clamp(36px,6vw,84px);max-width:20ch}
+.missions{border-top:1px solid var(--line)}
+.mission{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:28px;padding:44px 0;border-bottom:1px solid var(--line);align-items:start;transition:padding .4s}
+.mission:hover{padding-left:16px}
+.mission .n{font-family:var(--display);font-size:28px;color:var(--accent)}
+.mission h3{font-size:clamp(40px,5vw,72px)}
+.mission p{max-width:46ch}
+.mission small{display:block;margin-top:14px;opacity:.6;font-size:15px}
+.proof{background:var(--ink);color:var(--paper)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:20px}
+.stat b{display:block;font-family:var(--display);font-weight:300;font-size:clamp(64px,9vw,140px);letter-spacing:-0.05em;line-height:1}
+.stat span{opacity:.75}
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;margin-top:90px;border-top:1px solid rgba(246,244,239,.2);padding-top:50px}
+.quotes blockquote{font-family:var(--display);font-weight:300;font-size:clamp(26px,3vw,38px);letter-spacing:-0.05em;line-height:1.1}
+.quotes cite{display:block;margin-top:16px;font:300 14px var(--body);letter-spacing:.04em;opacity:.6;font-style:normal}
+.about .cols{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:20px}
+.about ul{list-style:none}
+.about li{padding:14px 0;border-bottom:1px solid var(--line)}
+.news{border-top:1px solid var(--line)}
+.news a{display:flex;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .3s}
+.news a:hover{padding-left:14px}
+.news a span:last-child{opacity:.5}
+.contact{background:var(--accent);color:var(--ink);padding:140px 0}
+.contact a.big{display:block;font-family:var(--display);font-weight:300;letter-spacing:-0.05em;font-size:clamp(64px,15vw,240px);line-height:.9;margin-top:12px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.contact a.big:hover{transform:translateX(24px) rotate(-1.5deg)}
+.contact p{max-width:40ch;font-size:20px}
+footer{padding:36px 28px;display:flex;justify-content:space-between;font-size:14px;opacity:.7;flex-wrap:wrap;gap:12px}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:820px){body{font-size:17px}header nav a:not(.pill){display:none}.mission{grid-template-columns:1fr;gap:10px}.stats,.quotes,.about .cols{grid-template-columns:1fr}section{padding:80px 0}}
+@media(prefers-reduced-motion:reduce){.marquee div{animation:none}.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#top">De Vie</a>
+  <nav>
+    <a href="#missions">What we do</a>
+    <a href="#proof">Proof</a>
+    <a href="#about">Who we are</a>
+    <a class="pill" href="#contact">Talk to us</a>
+  </nav>
+</header>
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <h1 class="display">Bars built to <em>live.</em></h1>
+    <div class="row">
+      <div>
+        <p>We create, train and run bars and drinks programmes for hotels, restaurants and brands. Two bars built from scratch, two world rankings.</p>
+        <a class="cta" href="#contact">Tell us about your project</a>
+      </div>
+      <div class="scroll">Scroll</div>
+    </div>
+  </div>
+</div>
+<div class="marquee" aria-hidden="true">
+  <div>
+    <span>Bar concept</span>·<span>Menu development</span>·<span>Training</span>·<span>Lab implementation</span>·<span>No and low</span>·<span>Sustainability</span>·<span>Pairing</span>·<span>Ranking and certification</span>·<span>Liquid production</span>·
+    <span>Bar concept</span>·<span>Menu development</span>·<span>Training</span>·<span>Lab implementation</span>·<span>No and low</span>·<span>Sustainability</span>·<span>Pairing</span>·<span>Ranking and certification</span>·<span>Liquid production</span>·
+  </div>
+</div>
+<section id="intro">
+  <div class="wrap reveal">
+    <div class="label">What we do</div>
+    <p class="display statement">We turn a bar idea into a place people queue for, and keep it that way.</p>
+  </div>
+</section>
+<section id="missions" style="padding-top:0">
+  <div class="wrap">
+    <div class="missions">
+      <div class="mission reveal">
+        <div class="n">01</div>
+        <h3 class="display">Hospitality</h3>
+        <div>
+          <p>Bar concepts, menus and training for hotels and restaurants. We take you from first idea to a team that serves it well.</p>
+          <small>Bar concept · Menu development · Training · Lab implementation · No and low · Sustainability · Pairing · Ranking and certification</small>
+        </div>
+      </div>
+      <div class="mission reveal">
+        <div class="n">02</div>
+        <h3 class="display">Brands</h3>
+        <div>
+          <p>Drinks creation and storytelling for spirits and lifestyle brands, built around how people really drink.</p>
+          <small>[Scope to confirm with Tim and Rory]</small>
+        </div>
+      </div>
+      <div class="mission reveal">
+        <div class="n">03</div>
+        <h3 class="display">Production</h3>
+        <div>
+          <p>Liquid production made properly: batching, ready-to-serve drinks and bespoke products for our clients.</p>
+          <small>Batching · RTD · Bespoke liquids</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="label reveal">Proof</div>
+    <div class="stats reveal">
+      <div class="stat"><b>No. 23</b><span>The World's 50 Best Bars 2026</span></div>
+      <div class="stat"><b>No. 34</b><span>Europe's 50 Best Bars</span></div>
+      <div class="stat"><b>3</b><span>Ecotable macarons for sustainability</span></div>
+    </div>
+    <div class="quotes reveal">
+      <blockquote>"[Client quote goes here. Short, one sentence.]"<cite>Name, role, company</cite></blockquote>
+      <blockquote>"[Second quote goes here.]"<cite>Name, role, company</cite></blockquote>
+    </div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="label reveal">Who we are</div>
+    <div class="cols reveal">
+      <p class="display statement" style="font-size:clamp(34px,4.6vw,64px)">A Parisian team that works by hand, in detail.</p>
+      <ul>
+        <li>We built Little Red Door and De Vie, and ran them to the top of the rankings.</li>
+        <li>We work with living ingredients and skilled craftspeople.</li>
+        <li>Sustainability, menu creation and bar concept are our core.</li>
+        <li>We are at home in luxury and lifestyle settings.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="news" style="padding:80px 0">
+  <div class="wrap">
+    <div class="label reveal">Selected work and news</div>
+    <a href="#" class="reveal"><span>[Project one]</span><span>2026</span></a>
+    <a href="#" class="reveal"><span>[Project two]</span><span>2026</span></a>
+    <a href="#" class="reveal"><span>[News item]</span><span>2026</span></a>
+  </div>
+</section>
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <p>Have a project? Let's have a first call.</p>
+    <a class="big" href="mailto:atelier@devie.bar">Talk to us</a>
+  </div>
+</section>
+</main>
+<footer>
+  <span>De Vie Consultancy · Paris</span>
+  <span>22-24 rue Saint-Sauveur, 75002 Paris</span>
+  <a href="https://instagram.com/devie.bar">@devie.bar</a>
+</footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
